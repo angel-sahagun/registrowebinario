@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Registro Webinario Angel Sahagun<</title></title>
+  <title>Angel Sahagun | Webinar Elite · Registro Premium</title>
+  <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -15,59 +17,129 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f5f7fc 0%, #eef2f9 100%);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0A0C12;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      padding: 1.5rem;
+      position: relative;
     }
 
-    .register-container {
-      max-width: 580px;
+    /* Fondo con textura sutil y glow premium */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      background: #ffffff;
-      border-radius: 1.5rem;
-      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(30, 40, 55, 0.6), rgba(5, 8, 14, 0.95));
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjMjYyZjNiIiBmaWxsLW9wYWNpdHk9IjAuMTUiIGQ9Ik0wIDBoNDB2NDBIMHoiLz48cGF0aCBkPSJNMzAgMTBhMTAgMTAgMCAwIDEgMCAyMCAxMCAxMCAwIDAgMSAwLTIweiIgc3Ryb2tlPSIjM2E0NjU0IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==');
+      background-repeat: repeat;
+      opacity: 0.2;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Contenedor principal cristal */
+    .register-container {
+      max-width: 680px;
+      width: 100%;
+      background: rgba(18, 22, 30, 0.85);
+      backdrop-filter: blur(16px);
+      border-radius: 2.5rem;
+      box-shadow: 0 35px 70px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
       overflow: hidden;
+      transition: transform 0.3s ease;
     }
 
+    /* Hero con degradado dorado/azul profundo */
     .hero-section {
-      background: linear-gradient(105deg, #1A2A3F 0%, #0F1A28 100%);
-      padding: 2rem 1.5rem;
+      background: linear-gradient(125deg, #0B121C 0%, #121C2A 100%);
+      padding: 2.5rem 2rem;
       text-align: center;
-      color: white;
+      position: relative;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -10%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(70, 130, 200, 0.1), transparent);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
-    .hero-section .badge {
+    .badge-premium {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.15);
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.12);
       backdrop-filter: blur(4px);
-      padding: 0.4rem 1rem;
-      border-radius: 60px;
+      padding: 0.45rem 1.4rem;
+      border-radius: 100px;
       font-size: 0.7rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #D4AF37;
+      margin-bottom: 1.3rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      text-transform: uppercase;
     }
 
     .hero-section h1 {
-      font-size: 1.6rem;
-      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #FFFFFF, #E0D6B0, #C5A028);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.75rem;
       letter-spacing: -0.3px;
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
     }
 
     .hero-section .sub {
       font-size: 0.9rem;
-      opacity: 0.85;
+      font-weight: 400;
+      color: #A6B3C9;
+      letter-spacing: 0.2px;
     }
 
     .form-wrapper {
-      padding: 1.5rem;
+      padding: 2rem 2rem 1.8rem;
+    }
+
+    /* grid elegante */
+    .grid-2cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
 
     .input-group {
@@ -77,224 +149,197 @@
     }
 
     .input-group label {
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.7rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #2c3e4e;
+      letter-spacing: 0.8px;
+      color: #C9D4E6;
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 8px;
-      flex-wrap: wrap;
     }
 
     .input-group label i {
-      color: #2c7da0;
+      color: #D4AF37;
+      font-size: 0.75rem;
+      width: 20px;
+    }
+
+    .required-star {
+      color: #E0A23B;
       font-size: 0.85rem;
-      width: 18px;
+      margin-left: 3px;
     }
 
-    .input-group label .required-star {
-      color: #e5484d;
-      font-size: 1rem;
-      margin-left: 2px;
-    }
-
-    .input-group label .optional-badge {
-      background: #e2e8f0;
-      color: #475569;
-      font-size: 0.6rem;
-      font-weight: 600;
-      padding: 0.2rem 0.5rem;
-      border-radius: 20px;
-      margin-left: 8px;
+    .optional-badge {
+      background: rgba(212, 175, 55, 0.15);
+      color: #D4AF37;
+      font-size: 0.55rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
       text-transform: none;
       letter-spacing: normal;
     }
 
-    .input-group input, .input-group select, .input-group textarea {
-      border: 1.5px solid #e2e8f0;
-      border-radius: 1rem;
+    .input-group input, 
+    .input-group select, 
+    .input-group textarea {
+      background: rgba(12, 16, 24, 0.9);
+      border: 1px solid rgba(70, 85, 105, 0.6);
+      border-radius: 1.25rem;
       padding: 0.85rem 1rem;
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-family: 'Inter', monospace;
-      transition: all 0.2s ease;
-      background: #fefefe;
-      outline: none;
-      color: #1e293b;
+      transition: all 0.25s;
+      color: #F0F3FA;
       font-weight: 500;
-      -webkit-appearance: none;
-      appearance: none;
+      outline: none;
+      backdrop-filter: blur(4px);
     }
 
     .input-group textarea {
       resize: vertical;
-      min-height: 80px;
-      font-family: 'Inter', sans-serif;
+      min-height: 85px;
     }
 
-    .input-group select {
-      cursor: pointer;
+    .input-group input:focus, 
+    .input-group select:focus, 
+    .input-group textarea:focus {
+      border-color: #D4AF37;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+      background: #0B111A;
     }
 
-    .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
-      border-color: #2c7da0;
-      box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.15);
-      background: white;
-    }
-
-    .input-group input.error-input, .input-group select.error-input, .input-group textarea.error-input {
-      border-color: #e5484d;
-      background-color: #fff5f5;
-      animation: shake 0.4s ease-in-out;
+    .input-group input.error-input, 
+    .input-group select.error-input, 
+    .input-group textarea.error-input {
+      border-color: #E64A4A;
+      background-color: rgba(230, 74, 74, 0.08);
+      animation: shake 0.35s ease;
     }
 
     @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      75% { transform: translateX(4px); }
+      0%,100%{ transform: translateX(0);}
+      25%{ transform: translateX(-5px);}
+      75%{ transform: translateX(5px);}
     }
 
-    .hint {
-      font-size: 0.65rem;
-      color: #5e6f8d;
+    .hint-text {
+      font-size: 0.6rem;
+      color: #8F9BB2;
       margin-top: 6px;
       display: flex;
       align-items: center;
       gap: 6px;
-      flex-wrap: wrap;
     }
 
+    .info-note {
+      background: rgba(212, 175, 55, 0.08);
+      border-radius: 1rem;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.7rem;
+      color: #E9D49C;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 3px solid #D4AF37;
+      font-weight: 500;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Botón primario dorado */
     .submit-btn {
       width: 100%;
-      background: linear-gradient(95deg, #1f6392, #2c7da0);
+      background: linear-gradient(98deg, #B8860B, #D4AF37, #E4C468);
       border: none;
-      padding: 1rem;
+      padding: 1rem 1.2rem;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 800;
       font-family: 'Inter', sans-serif;
-      color: white;
+      color: #0B0E14;
       border-radius: 2rem;
       cursor: pointer;
-      transition: all 0.2s;
+      margin-top: 0.8rem;
+      transition: all 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      margin-top: 0.5rem;
-      box-shadow: 0 8px 18px rgba(44, 125, 160, 0.25);
+      gap: 12px;
+      box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 215, 0, 0.3);
+      letter-spacing: 0.5px;
     }
 
     .submit-btn:hover {
-      background: linear-gradient(95deg, #17547c, #236b8a);
       transform: translateY(-2px);
-      box-shadow: 0 14px 24px rgba(44, 125, 160, 0.35);
-    }
-
-    .submit-btn:active {
-      transform: translateY(1px);
+      background: linear-gradient(98deg, #C9A03D, #E9C468, #F5D97A);
+      box-shadow: 0 18px 28px -10px rgba(212, 175, 55, 0.4);
     }
 
     .submit-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
+      opacity: 0.6;
       transform: none;
+      cursor: not-allowed;
     }
 
+    /* Toast con estilo dorado */
     .notification-toast {
       position: fixed;
-      bottom: 20px;
+      bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: rgba(15, 25, 35, 0.95);
-      color: white;
-      padding: 0.9rem 1.5rem;
-      border-radius: 50px;
+      background: rgba(10, 14, 22, 0.96);
+      backdrop-filter: blur(16px);
+      color: #F8F3E2;
+      padding: 1rem 2rem;
+      border-radius: 60px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-weight: 600;
       font-size: 0.85rem;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      z-index: 1000;
-      transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1), opacity 0.2s;
-      pointer-events: none;
+      box-shadow: 0 20px 35px -5px black;
+      z-index: 2000;
+      transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       opacity: 0;
       visibility: hidden;
-      max-width: 90%;
-      text-align: center;
-      backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      letter-spacing: 0.2px;
     }
-
     .notification-toast.show {
       transform: translateX(-50%) translateY(0);
       opacity: 1;
       visibility: visible;
     }
-
-    .notification-toast.error-toast {
-      background: linear-gradient(135deg, #c72a2f, #a11f24);
-    }
-
     .notification-toast.success-toast {
-      background: linear-gradient(135deg, #1f8a4c, #146b3a);
+      background: linear-gradient(115deg, #1D5B3E, #0E3824);
+      border-color: #D4AF37;
+    }
+    .notification-toast.error-toast {
+      background: linear-gradient(115deg, #881a1f, #5c1014);
+      border-color: #E68A2E;
     }
 
-    .notification-toast i {
-      font-size: 1.3rem;
-    }
-
+    /* Footer completamente eliminado - sin badges de acceso garantizado, etc */
     .footer-note {
-      text-align: center;
-      font-size: 0.65rem;
-      color: #7e8b9e;
-      border-top: 1px solid #edf2f7;
-      padding: 1rem;
-      background: #fafcff;
+      display: none;
     }
 
-    .info-note {
-      background: #f0f7fa;
-      border-radius: 0.75rem;
-      padding: 0.75rem;
-      margin-bottom: 1.25rem;
-      font-size: 0.7rem;
-      color: #2c7da0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-left: 3px solid #2c7da0;
-    }
-
-    .info-note i {
-      font-size: 0.9rem;
-    }
-
-    @media (min-width: 768px) {
-      body {
-        padding: 2rem;
-      }
-      .register-container {
-        max-width: 600px;
-      }
-      .hero-section {
-        padding: 2.5rem 2rem;
-      }
-      .hero-section h1 {
-        font-size: 1.9rem;
+    @media (max-width: 580px) {
+      .grid-2cols {
+        grid-template-columns: 1fr;
+        gap: 0;
       }
       .form-wrapper {
-        padding: 2rem;
+        padding: 1.5rem;
       }
-      .submit-btn {
-        padding: 1.1rem;
-        font-size: 1.05rem;
+      .hero-section h1 {
+        font-size: 1.6rem;
       }
-      .notification-toast {
-        padding: 1rem 2rem;
-        font-size: 0.95rem;
-        bottom: 30px;
+      .hero-section {
+        padding: 1.8rem;
       }
     }
   </style>
@@ -302,110 +347,99 @@
 <body>
 <div class="register-container">
   <div class="hero-section">
-    <div class="badge">
-      <i class="fas fa-calendar-alt"></i> <span>Evento en vivo por microsoft teams</span>
+    <div class="badge-premium">
+      <i class="fas fa-crown"></i> <span>EXPERIENCIA VIP · ANGEL SAHAGUN</span>
     </div>
-    <h1>Regístrate en nuestro webinario</h1>
-    <div class="sub">Únete a nuestro webinario exclusivo · Aprende de expertos</div>
+    <h1>Webinar Elite<br>Estrategias que Transforman</h1>
+    <div class="sub">Acceso directo por Microsoft Teams · Cupos estrictamente limitados</div>
   </div>
 
   <div class="form-wrapper">
-    <form id="webinarForm">
-      <div class="input-group">
-        <label><i class="fas fa-user"></i> Nombre/s: <span class="required-star">*</span></label>
-        <input type="text" id="nombre" name="nombre" placeholder="" required autocomplete="given-name" inputmode="text">
-      </div>
-
-      <div class="input-group">
-        <label><i class="fas fa-user-friends"></i> Apellido/s: <span class="required-star">*</span></label>
-        <input type="text" id="apellidos" name="apellidos" placeholder="" required autocomplete="family-name" inputmode="text">
-      </div>
-
-      <div class="input-group">
-        <label><i class="fas fa-envelope"></i> Correo electrónico: <span class="required-star">*</span></label>
-        <input type="email" id="email" name="email" placeholder="" required autocomplete="email" inputmode="email">
-        <div class="hint">
-          <i class="fas fa-info-circle"></i> Te enviaremos los accesos al curso a este correo.
+    <form id="premiumWebinarForm">
+      <div class="grid-2cols">
+        <div class="input-group">
+          <label><i class="fas fa-user-astronaut"></i> Nombre(s) <span class="required-star">*</span></label>
+          <input type="text" id="nombre" placeholder="Ej. Isabella" required autocomplete="given-name">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-user-tie"></i> Apellido(s) <span class="required-star">*</span></label>
+          <input type="text" id="apellidos" placeholder="Ej. Montenegro" required autocomplete="family-name">
         </div>
       </div>
 
       <div class="input-group">
-        <label><i class="fas fa-phone-alt"></i> Teléfono: <span class="optional-badge">Opcional</span></label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 5512345678" inputmode="numeric">
-        <div class="hint">
-          <i class="fas fa-info-circle"></i> Opcional. Solo números, 10 dígitos.
-        </div>
+        <label><i class="fas fa-envelope-gold"></i> Correo electrónico <span class="required-star">*</span></label>
+        <input type="email" id="email" placeholder="nombre@empresa.com" required autocomplete="email">
+        <div class="hint-text"><i class="fas fa-key"></i> Te enviaremos el acceso VIP y materiales</div>
       </div>
 
-      <!-- NUEVAS PREGUNTAS -->
+      <div class="input-group">
+        <label><i class="fas fa-phone-ring"></i> Teléfono directo <span class="optional-badge">Opcional</span></label>
+        <input type="tel" id="telefono" placeholder="5512345678" inputmode="numeric">
+        <div class="hint-text"><i class="fas fa-shield-alt"></i> Solo dígitos, 10 caracteres</div>
+      </div>
+
       <div class="info-note">
-        <i class="fas fa-chart-line"></i>
-        <span>Esta información es importante para tener un buen contexto del grupo, gracias.</span>
+        <i class="fas fa-chart-net"></i>
+        <span>Información estratégica para garantizar una experiencia a tu medida</span>
+      </div>
+
+      <div class="grid-2cols">
+        <div class="input-group">
+          <label><i class="fas fa-briefcase-clock"></i> Puesto actual <span class="required-star">*</span></label>
+          <input type="text" id="puesto" placeholder="Director, Head, Consultor..." required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-diagram-project"></i> Área <span class="required-star">*</span></label>
+          <input type="text" id="area" placeholder="Estrategia, Innovación, Ventas" required>
+        </div>
+      </div>
+
+      <div class="grid-2cols">
+        <div class="input-group">
+          <label><i class="fas fa-chart-line"></i> Años en industria <span class="required-star">*</span></label>
+          <input type="number" id="aniosIndustria" min="0" max="60" placeholder="Ej: 8" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-building"></i> Ramo empresarial <span class="required-star">*</span></label>
+          <input type="text" id="ramo" placeholder="Fintech, Salud, Retail, Tech" required>
+        </div>
       </div>
 
       <div class="input-group">
-        <label><i class="fas fa-briefcase"></i> Puesto/Actividad Actual: <span class="required-star">*</span></label>
-        <input type="text" id="puesto" name="puesto" placeholder="" required>
-      </div>
-
-      <div class="input-group">
-        <label><i class="fas fa-building"></i> Área: <span class="required-star">*</span></label>
-        <input type="text" id="area" name="area" placeholder="" required>
-      </div>
-
-      <div class="input-group">
-        <label><i class="fas fa-chart-simple"></i> Años en la industria: <span class="required-star">*</span></label>
-        <input type="number" id="aniosIndustria" name="aniosIndustria" placeholder="" min="0" max="60" required>
-      </div>
-
-      <div class="input-group">
-        <label><i class="fas fa-store"></i> Ramo de la empresa: <span class="required-star">*</span></label>
-        <input type="text" id="ramo" name="ramo" placeholder="" required>
-      </div>
-
-      <div class="input-group">
-        <label><i class="fas fa-graduation-cap"></i> Conocimiento del tema: <span class="required-star">*</span></label>
-        <select id="conocimiento" name="conocimiento" required>
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option value="Alto">Alto</option>
-          <option value="Medio">Medio</option>
-          <option value="Bajo">Bajo</option>
+        <label><i class="fas fa-brain"></i> Nivel de expertise <span class="required-star">*</span></label>
+        <select id="conocimiento" required>
+          <option value="" disabled selected>Selecciona tu nivel</option>
+          <option value="Alto">Alto (Especialista)</option>
+          <option value="Medio">Medio (Conocimiento sólido)</option>
+          <option value="Bajo">Bajo (Explorador estratégico)</option>
         </select>
       </div>
 
       <div class="input-group">
-        <label><i class="fas fa-comment-dots"></i> ¿Algún punto en especial que quisiera que se tocara?</label>
-        <textarea id="puntosEspeciales" name="puntosEspeciales" placeholder=""></textarea>
-        <div class="hint">
-          
-        </div>
+        <label><i class="fas fa-message-quote"></i> ¿Qué esperas del webinar?</label>
+        <textarea id="puntosEspeciales" placeholder="Comparte tus expectativas, dudas o temas específicos..."></textarea>
       </div>
 
       <button type="submit" class="submit-btn" id="submitBtn">
-        <i class="fas fa-paper-plane"></i> Enviar registro
+        <i class="fas fa-gem"></i> RESERVAR MI PLAZA VIP
       </button>
     </form>
   </div>
-  <div class="footer-note">
-    <i class="fas fa-lock"></i> Recibirás los accesos al curso en tu correo electrónico
-  </div>
+  <!-- Footer eliminado: sin textos "Acceso garantizado", "Certificado digital", "Soporte premium" -->
 </div>
 
 <script>
-  // Configuración de EmailJS
+  // ========= CONFIGURACIÓN EMAILJS =========
   const EMAILJS_PUBLIC_KEY = "hK114gVXTRlfJdVI4";
   const EMAILJS_SERVICE_ID = "service_6cke3k3";
+  const EMAILJS_TEMPLATE_ADMIN = "template_ovhtio9";     // Notificación para el organizador
+  const EMAILJS_TEMPLATE_CLIENTE = "template_a9h9xe3";   // Envío de accesos al alumno
   
-  // TEMPLATE PARA TI (administrador) - confirmación de registro
-  const EMAILJS_TEMPLATE_ADMIN = "template_ovhtio9";
-  
-  // TEMPLATE PARA EL CLIENTE - accesos al curso
-  const EMAILJS_TEMPLATE_CLIENTE = "template_a9h9xe3";
-  
-  // Inicializar EmailJS
   emailjs.init(EMAILJS_PUBLIC_KEY);
   
-  const form = document.getElementById('webinarForm');
+  // Elementos DOM
+  const form = document.getElementById('premiumWebinarForm');
   const nombreInput = document.getElementById('nombre');
   const apellidosInput = document.getElementById('apellidos');
   const emailInput = document.getElementById('email');
@@ -418,117 +452,81 @@
   const puntosEspecialesTextarea = document.getElementById('puntosEspeciales');
   const submitBtn = document.getElementById('submitBtn');
   
-  let toastContainer = document.querySelector('.notification-toast');
-  if (!toastContainer) {
-    toastContainer = document.createElement('div');
-    toastContainer.className = 'notification-toast';
-    document.body.appendChild(toastContainer);
+  // Toast component
+  let toastDiv = document.querySelector('.notification-toast');
+  if (!toastDiv) {
+    toastDiv = document.createElement('div');
+    toastDiv.className = 'notification-toast';
+    document.body.appendChild(toastDiv);
   }
-  
-  let activeToastTimeout = null;
-  
+  let toastTimeout = null;
   function showToast(message, type) {
-    if (activeToastTimeout) {
-      clearTimeout(activeToastTimeout);
-      activeToastTimeout = null;
-    }
-    
-    toastContainer.classList.remove('show', 'success-toast', 'error-toast');
-    void toastContainer.offsetWidth;
-    
-    let iconHtml = '';
-    if (type === 'success') {
-      iconHtml = '<i class="fas fa-check-circle"></i>';
-      toastContainer.classList.add('success-toast');
-    } else if (type === 'error') {
-      iconHtml = '<i class="fas fa-times-circle"></i>';
-      toastContainer.classList.add('error-toast');
-    }
-    
-    toastContainer.innerHTML = `${iconHtml} <span>${message}</span>`;
-    toastContainer.classList.add('show');
-    
-    activeToastTimeout = setTimeout(() => {
-      toastContainer.classList.remove('show');
-      setTimeout(() => {
-        if (toastContainer.innerHTML !== '') {
-          toastContainer.innerHTML = '';
-        }
-      }, 300);
-      activeToastTimeout = null;
-    }, 5000);
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastDiv.classList.remove('show', 'success-toast', 'error-toast');
+    void toastDiv.offsetWidth;
+    let iconHtml = type === 'success' ? '<i class="fas fa-check-double"></i>' : '<i class="fas fa-skull-crosswalk"></i>';
+    toastDiv.innerHTML = `${iconHtml} <span>${message}</span>`;
+    if (type === 'success') toastDiv.classList.add('success-toast');
+    else if (type === 'error') toastDiv.classList.add('error-toast');
+    toastDiv.classList.add('show');
+    toastTimeout = setTimeout(() => toastDiv.classList.remove('show'), 5500);
   }
   
-  function addErrorAnimation(inputElement) {
-    if (!inputElement) return;
-    inputElement.classList.add('error-input');
-    inputElement.focus();
-    setTimeout(() => {
-      inputElement.classList.remove('error-input');
-    }, 500);
-  }
-  
-  function validatePhone(phone) {
-    if (!phone || phone === '') return true;
-    const phoneRegex = /^\d{10}$/;
-    return phoneRegex.test(phone);
+  function addErrorAnimation(el) {
+    if (!el) return;
+    el.classList.add('error-input');
+    el.focus({ preventScroll: true });
+    setTimeout(() => el.classList.remove('error-input'), 500);
   }
   
   function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  function validatePhone(phone) {
+    if (!phone) return true;
+    return /^\d{10}$/.test(phone);
   }
   
-  // CORREO PARA TI (administrador) - notificación de nuevo registro
+  // Envío al ADMIN (notificación de nuevo registro)
   async function sendAdminNotification(formData) {
-    const templateParams = {
-      to_email: "tucorreo@tudominio.com", // <--- CAMBIA ESTO POR TU CORREO
+    const adminParams = {
+      to_email: "tucorreo@tudominio.com",    // ¡IMPORTANTE! CAMBIAR POR CORREO REAL DEL ADMIN
       nombre: formData.nombre,
       apellidos: formData.apellidos,
       email: formData.email,
-      telefono: formData.telefono || 'No proporcionado',
+      telefono: formData.telefono || 'No indicado',
       puesto: formData.puesto,
       area: formData.area,
       anios_industria: formData.aniosIndustria,
       ramo: formData.ramo,
       conocimiento: formData.conocimiento,
-      puntos_especiales: formData.puntosEspeciales || 'No especificó',
-      fecha_registro: new Date().toLocaleString('es-ES')
+      puntos_especiales: formData.puntosEspeciales || 'Sin especificar',
+      fecha_registro: new Date().toLocaleString('es-ES', { timeZone: 'America/Mexico_City' })
     };
-    
-    const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, templateParams);
-    return response;
+    return await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, adminParams);
   }
   
-  // CORREO PARA EL CLIENTE - accesos al curso
+  // Envío al CLIENTE: ACCESO AL CURSO / WEBINAR (datos dinámicos + link)
   async function sendClientAccessEmail(formData) {
-    // Estos placeholders deben coincidir con los de tu plantilla template_a9h9xe3
-    const templateParams = {
-      // Destinatario (el correo del cliente)
+    const clientParams = {
       email: formData.email,
-      
-      // Datos personales del cliente
       nombre_alumno: formData.nombre,
       apellidos_alumno: formData.apellidos,
       email_alumno: formData.email,
       telefono_alumno: formData.telefono || 'No proporcionado',
-      
-      // Datos del curso (CAMBIA ESTOS VALORES POR LOS TUYOS)
-      nombre_curso: "Marketing Digital Avanzado 2026",
-      link_acceso: "https://tu-escuela.com/curso/marketing/acceso",
+      // Personaliza los datos del curso aquí (branding premium)
+      nombre_curso: "Webinar Elite: Liderazgo y Estrategia 2026",
+      link_acceso: "https://vip.angelsahagun.com/acceso-webinar",
       usuario_acceso: formData.email,
-      contrasena_acceso: "Webinar2026",
-      fecha_inicio: "20 de mayo de 2026",
-      duracion: "4 semanas",
-      
-      // Mensaje de bienvenida
-      mensaje_bienvenida: `¡Felicidades ${formData.nombre}! Tu registro ha sido exitoso. Aquí tienes los datos para acceder a tu curso.`
+      contrasena_acceso: "ELITE2026",
+      fecha_inicio: "22 de Junio de 2026 - 7:00 PM (CDMX)",
+      duracion: "2 horas de contenido + Q&A",
+      mensaje_bienvenida: `${formData.nombre}, te damos la bienvenida a esta experiencia exclusiva. Adjuntamos tus credenciales para acceder a la sala privada de Microsoft Teams. ¡Prepárate para transformar tu visión!`
     };
-    
-    const response = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENTE, templateParams);
-    return response;
+    return await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CLIENTE, clientParams);
   }
   
+  // Evento principal
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -544,244 +542,80 @@
     const puntosEspeciales = puntosEspecialesTextarea.value.trim();
     
     let hasError = false;
-    
-    if (!nombre || nombre.length < 2) {
-      addErrorAnimation(nombreInput);
-      showToast("❌ Error: Ingresa un nombre válido (mínimo 2 caracteres)", "error");
-      hasError = true;
-    }
-    else if (!apellidos || apellidos.length < 2) {
-      addErrorAnimation(apellidosInput);
-      showToast("❌ Error: Ingresa tus apellidos completos", "error");
-      hasError = true;
-    }
-    else if (!email || !validateEmail(email)) {
-      addErrorAnimation(emailInput);
-      showToast("❌ Error: Ingresa un correo electrónico válido", "error");
-      hasError = true;
-    }
-    else if (telefono && !validatePhone(telefono)) {
-      addErrorAnimation(telefonoInput);
-      showToast("❌ Error: El teléfono debe tener EXACTAMENTE 10 dígitos numéricos", "error");
-      hasError = true;
-    }
-    else if (!puesto) {
-      addErrorAnimation(puestoInput);
-      showToast("❌ Error: Ingresa tu puesto o actividad actual", "error");
-      hasError = true;
-    }
-    else if (!area) {
-      addErrorAnimation(areaInput);
-      showToast("❌ Error: Ingresa tu área de trabajo", "error");
-      hasError = true;
-    }
-    else if (!aniosIndustria || isNaN(aniosIndustria) || aniosIndustria < 0 || aniosIndustria > 60) {
-      addErrorAnimation(aniosIndustriaInput);
-      showToast("❌ Error: Ingresa un número válido de años en la industria (0-60)", "error");
-      hasError = true;
-    }
-    else if (!ramo) {
-      addErrorAnimation(ramoInput);
-      showToast("❌ Error: Ingresa el ramo de tu empresa", "error");
-      hasError = true;
-    }
-    else if (!conocimiento) {
-      addErrorAnimation(conocimientoSelect);
-      showToast("❌ Error: Selecciona tu nivel de conocimiento del tema", "error");
-      hasError = true;
-    }
+    if (nombre.length < 2) { addErrorAnimation(nombreInput); showToast("❌ Nombre válido requerido", "error"); hasError = true; }
+    else if (apellidos.length < 2) { addErrorAnimation(apellidosInput); showToast("❌ Apellidos requeridos", "error"); hasError = true; }
+    else if (!email || !validateEmail(email)) { addErrorAnimation(emailInput); showToast("❌ Correo electrónico inválido", "error"); hasError = true; }
+    else if (telefono && !validatePhone(telefono)) { addErrorAnimation(telefonoInput); showToast("❌ Teléfono: 10 dígitos numéricos", "error"); hasError = true; }
+    else if (!puesto) { addErrorAnimation(puestoInput); showToast("❌ Indica tu puesto actual", "error"); hasError = true; }
+    else if (!area) { addErrorAnimation(areaInput); showToast("❌ Área profesional requerida", "error"); hasError = true; }
+    else if (!aniosIndustria || isNaN(aniosIndustria) || Number(aniosIndustria) < 0 || Number(aniosIndustria) > 60) { addErrorAnimation(aniosIndustriaInput); showToast("❌ Años en industria (0-60)", "error"); hasError = true; }
+    else if (!ramo) { addErrorAnimation(ramoInput); showToast("❌ Ramo de empresa obligatorio", "error"); hasError = true; }
+    else if (!conocimiento) { addErrorAnimation(conocimientoSelect); showToast("❌ Selecciona tu nivel de conocimiento", "error"); hasError = true; }
     
     if (hasError) return;
     
-    // Limpiar teléfono (solo números)
     if (telefono) {
-      telefono = telefono.replace(/\D/g, '');
-      if (telefono.length > 10) telefono = telefono.slice(0, 10);
+      telefono = telefono.replace(/\D/g, '').slice(0,10);
       telefonoInput.value = telefono;
     }
     
-    const formData = {
-      nombre,
-      apellidos,
-      email,
-      telefono: telefono || '',
-      puesto,
-      area,
-      aniosIndustria,
-      ramo,
-      conocimiento,
-      puntosEspeciales
-    };
+    const formData = { nombre, apellidos, email, telefono: telefono || '', puesto, area, aniosIndustria, ramo, conocimiento, puntosEspeciales };
     
     submitBtn.disabled = true;
-    const originalBtnHTML = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Procesando...';
+    const originalHtml = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Procesando reserva...';
     
     try {
-      // 1. Enviar correo al CLIENTE con los ACCESOS AL CURSO
+      // 1. Enviar el correo de ACCESOS al cliente (prioridad)
       await sendClientAccessEmail(formData);
-      console.log("Correo de accesos enviado al cliente");
-      
-      // 2. Enviar correo a TI (administrador) como notificación
+      // 2. Notificación al administrador
       await sendAdminNotification(formData);
-      console.log("Notificación enviada al administrador");
-      
-      showToast("✅ ¡Registro exitoso! Revisa tu correo, te hemos enviado los accesos al curso.", "success");
-      
+      showToast("✅ ¡Registro confirmado! Revisa tu bandeja de entrada (y spam) con los accesos al webinar.", "success");
       form.reset();
       nombreInput.focus();
-      
     } catch (error) {
-      console.error("Error detallado:", error);
-      
-      let errorMessage = "❌ Error al enviar: ";
-      
+      console.error("EmailJS error:", error);
+      let friendlyMsg = "⚠️ No pudimos completar el registro. Contacta a soporte.";
       if (error.text) {
-        if (error.text.includes("template")) {
-          errorMessage = "❌ Error: La plantilla de EmailJS no está configurada correctamente. Verifica que los Template IDs sean correctos.";
-        } else if (error.text.includes("service")) {
-          errorMessage = "❌ Error: El servicio de EmailJS no está configurado correctamente.";
-        } else {
-          errorMessage = `❌ ${error.text || "Error desconocido. Revisa la consola."}`;
-        }
-      } else if (error.message) {
-        errorMessage = `❌ ${error.message}`;
-      } else {
-        errorMessage = "❌ Error al enviar: Intente nuevamente más tarde.";
-      }
-      
-      showToast(errorMessage, "error");
-      submitBtn.style.transform = "shake 0.3s";
-      setTimeout(() => { submitBtn.style.transform = ""; }, 400);
+        if (error.text.includes("template")) friendlyMsg = "Error de configuración de plantilla. Contacta al administrador.";
+        else friendlyMsg = `Error: ${error.text.substring(0, 100)}`;
+      } else if (error.message) friendlyMsg = `Error: ${error.message}`;
+      showToast(friendlyMsg, "error");
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = originalBtnHTML;
+      submitBtn.innerHTML = originalHtml;
     }
   });
   
-  // Limitar teléfono a solo números y máximo 10 dígitos
+  // Validaciones en tiempo real + UX
   telefonoInput.addEventListener('input', (e) => {
-    let val = e.target.value.replace(/\D/g, '');
-    if (val.length > 10) val = val.slice(0, 10);
-    e.target.value = val;
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.length > 10) v = v.slice(0,10);
+    e.target.value = v;
+    if (v.length === 10 || v === '') telefonoInput.classList.remove('error-input');
   });
-  
-  emailInput.addEventListener('input', (e) => {
-    if (validateEmail(e.target.value.trim())) {
-      emailInput.classList.remove('error-input');
-    }
-  });
-  
-  const clearErrorOnFocus = (input, validatorFn = null) => {
-    input.addEventListener('focus', () => {
-      input.classList.remove('error-input');
-    });
-    if (validatorFn) {
-      input.addEventListener('input', () => {
-        if (validatorFn(input.value.trim())) {
-          input.classList.remove('error-input');
-        }
-      });
-    }
+  emailInput.addEventListener('input', () => { if (validateEmail(emailInput.value.trim())) emailInput.classList.remove('error-input'); });
+  const clearErrors = (el, validator) => {
+    el.addEventListener('focus', () => el.classList.remove('error-input'));
+    if (validator) el.addEventListener('input', () => { if (validator(el.value.trim())) el.classList.remove('error-input'); });
   };
+  clearErrors(nombreInput, v => v.length>=2);
+  clearErrors(apellidosInput, v => v.length>=2);
+  clearErrors(puestoInput, v => v.length>0);
+  clearErrors(areaInput, v => v.length>0);
+  clearErrors(aniosIndustriaInput, v => !isNaN(v) && v>=0 && v<=60);
+  clearErrors(ramoInput, v => v.length>0);
+  conocimientoSelect.addEventListener('change', () => { if (conocimientoSelect.value) conocimientoSelect.classList.remove('error-input'); });
   
-  clearErrorOnFocus(nombreInput, (val) => val.length >= 2);
-  clearErrorOnFocus(apellidosInput, (val) => val.length >= 2);
-  clearErrorOnFocus(emailInput, (val) => validateEmail(val));
-  clearErrorOnFocus(telefonoInput, (val) => !val || validatePhone(val));
-  clearErrorOnFocus(puestoInput, (val) => val.length > 0);
-  clearErrorOnFocus(areaInput, (val) => val.length > 0);
-  clearErrorOnFocus(aniosIndustriaInput, (val) => !isNaN(val) && val >= 0 && val <= 60);
-  clearErrorOnFocus(ramoInput, (val) => val.length > 0);
-  
-  conocimientoSelect.addEventListener('change', () => {
-    if (conocimientoSelect.value) {
-      conocimientoSelect.classList.remove('error-input');
-    }
+  aniosIndustriaInput.addEventListener('blur', () => {
+    let val = parseInt(aniosIndustriaInput.value);
+    if (isNaN(val)) aniosIndustriaInput.value = '';
+    else if (val < 0) aniosIndustriaInput.value = 0;
+    else if (val > 60) aniosIndustriaInput.value = 60;
   });
 </script>
-<script src="/index-7T5KD7DK.js" id="playcode-script"></script>
-<!-- PlayCode Badge - "Made with PlayCode" -->
-<!-- Injected into published sites for brand attribution -->
-<!-- Features: dismissible with localStorage persistence -->
-<div id="playcode-badge-container" style="
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  z-index: 2147483647;
-  display: flex;
-  align-items: center;
-  gap: 0;
-  background: #222;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-">
-  <a 
-    href="https://playcode.io/ai-website-builder?ref=badge" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    id="playcode-badge-link"
-    title="Build your website with AI"
-    style="
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 10px;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background 0.15s ease;
-    "
-    onmouseover="this.style.background='rgba(255,255,255,0.05)'"
-    onmouseout="this.style.background='transparent'"
-  >
-    <!-- PlayCode Logo Icon -->
-    <svg width="12" height="11" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M10.9868 0.477384L10.7089 0.704008C10.1475 1.16191 9.81668 1.88602 9.81738 2.65515L9.83431 18.6182C9.83502 19.3834 10.1644 20.1036 10.7223 20.5608C11.5165 21.2112 12.6069 21.2003 13.3891 20.5328L23.049 12.2968C23.5878 11.8373 23.9031 11.1295 23.9031 10.379V10.3511C23.9031 9.59667 23.5836 8.88498 23.0398 8.42552L13.6409 0.500667C12.8601 -0.15825 11.7774 -0.167563 10.9868 0.477384ZM19.4432 9.52769L13.9831 4.92761C13.6719 4.66584 13.2324 4.91953 13.2324 5.36164V6.72632C13.2324 6.89388 13.3007 7.05269 13.4172 7.1543L16.8606 10.274V10.3116L13.4272 13.2624C13.3048 13.364 13.2324 13.5262 13.2324 13.6984V15.2408C13.2324 15.6829 13.6725 15.9373 13.9837 15.6741L19.4438 11.0579C19.5638 10.9563 19.635 10.7955 19.635 10.6245V9.96172C19.635 9.79013 19.5638 9.6293 19.4432 9.52769ZM6.02871 4.92761L0.204576 9.52769C0.0759315 9.6293 0 9.79013 0 9.96172V10.6245C0 10.7955 0.0759316 10.9563 0.203948 11.0579L6.02809 15.6741C6.36005 15.9373 6.82945 15.6829 6.82945 15.2408V13.6984C6.82945 13.5262 6.75226 13.364 6.62173 13.2624L2.98788 10.3116V10.274L6.6324 7.1543C6.75665 7.05269 6.82945 6.89388 6.82945 6.72632V5.36164C6.82945 4.91953 6.36068 4.66584 6.02871 4.92761Z"
-        fill="rgba(255,255,255,0.9)"/>
-    </svg>
-    <span style="color: rgba(255,255,255,0.85); white-space: nowrap;">Made in Angel Sahagun</span>
-  </a>
-  <button
-    id="playcode-badge-close"
-    title="Close"
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 100%;
-      padding: 5px 6px;
-      background: transparent;
-      border: none;
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.4);
-      cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease;
-    "
-    onmouseover="this.style.background='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.7)'"
-    onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.4)'"
-    onclick="document.getElementById('playcode-badge-container').style.display='none';try{localStorage.setItem('playcode-badge-hidden','1')}catch(e){}"
-  >
-    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 1L11 11M1 11L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-  </button>
-</div>
-<script>
-(function(){
-  try {
-    if (localStorage.getItem('playcode-badge-hidden') === '1') {
-      var badge = document.getElementById('playcode-badge-container');
-      if (badge) badge.style.display = 'none';
-    }
-  } catch(e) {}
-})();
-</script>
+
+<div style="position: fixed; bottom: 12px; left: 12px; z-index: 2147483640; font-family: 'Inter', sans-serif; font-size: 9px; background: rgba(0,0,0,0.4); backdrop-filter: blur(6px); padding: 4px 12px; border-radius: 40px; color: #C0B07A; pointer-events: none; letter-spacing: 0.4px;">
+  <i class=""></i> Hecho por Angel Sahagún 
 </body>
 </html>
