@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Angel Sahagun Registro </title>
+  <title>Angel Sahagun Registro</title>
   <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Google Fonts + Icons -->
@@ -18,7 +18,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0A0C12;
+      background: #FFFFFF;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -27,50 +27,24 @@
       position: relative;
     }
 
-    /* Fondo con textura sutil y glow premium */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 20% 30%, rgba(30, 40, 55, 0.6), rgba(5, 8, 14, 0.95));
-      z-index: -2;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjMjYyZjNiIiBmaWxsLW9wYWNpdHk9IjAuMTUiIGQ9Ik0wIDBoNDB2NDBIMHoiLz48cGF0aCBkPSJNMzAgMTBhMTAgMTAgMCAwIDEgMCAyMCAxMCAxMCAwIDAgMSAwLTIweiIgc3Ryb2tlPSIjM2E0NjU0IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==');
-      background-repeat: repeat;
-      opacity: 0.2;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    /* Contenedor principal cristal */
+    /* Contenedor principal */
     .register-container {
       max-width: 680px;
       width: 100%;
-      background: rgba(18, 22, 30, 0.85);
-      backdrop-filter: blur(16px);
-      border-radius: 2.5rem;
-      box-shadow: 0 35px 70px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      background: #FFFFFF;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: transform 0.3s ease;
     }
 
-    /* Hero con degradado dorado/azul profundo */
+    /* Hero section con negro y azul */
     .hero-section {
-      background: linear-gradient(125deg, #0B121C 0%, #121C2A 100%);
+      background: linear-gradient(135deg, #0A0F1E 0%, #0B1A2E 100%);
       padding: 2.5rem 2rem;
       text-align: center;
       position: relative;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      border-bottom: none;
     }
     .hero-section::before {
       content: '';
@@ -79,7 +53,7 @@
       left: -10%;
       width: 280px;
       height: 280px;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
+      background: radial-gradient(circle, rgba(0, 100, 200, 0.08), transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -90,7 +64,7 @@
       right: -20px;
       width: 200px;
       height: 200px;
-      background: radial-gradient(circle, rgba(70, 130, 200, 0.1), transparent);
+      background: radial-gradient(circle, rgba(0, 80, 160, 0.06), transparent);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -99,16 +73,16 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(212, 175, 55, 0.12);
+      background: rgba(0, 100, 200, 0.12);
       backdrop-filter: blur(4px);
       padding: 0.45rem 1.4rem;
       border-radius: 100px;
       font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      color: #D4AF37;
+      color: #2E8BFF;
       margin-bottom: 1.3rem;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      border: 1px solid rgba(46, 139, 255, 0.3);
       text-transform: uppercase;
     }
 
@@ -116,7 +90,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 2.1rem;
       font-weight: 600;
-      background: linear-gradient(135deg, #FFFFFF, #E0D6B0, #C5A028);
+      background: linear-gradient(135deg, #FFFFFF, #CCE4FF, #6BAAFF);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -127,12 +101,13 @@
     .hero-section .sub {
       font-size: 0.9rem;
       font-weight: 400;
-      color: #A6B3C9;
+      color: #A0BBE0;
       letter-spacing: 0.2px;
     }
 
     .form-wrapper {
       padding: 2rem 2rem 1.8rem;
+      background: #FFFFFF;
     }
 
     /* grid elegante */
@@ -149,11 +124,11 @@
     }
 
     .input-group label {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      color: #C9D4E6;
+      color: #0A1E3A;
       margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
@@ -161,20 +136,20 @@
     }
 
     .input-group label i {
-      color: #D4AF37;
-      font-size: 0.75rem;
+      color: #1E5BBF;
+      font-size: 0.8rem;
       width: 20px;
     }
 
     .required-star {
-      color: #E0A23B;
-      font-size: 0.85rem;
+      color: #DC2626;
+      font-size: 0.9rem;
       margin-left: 3px;
     }
 
     .optional-badge {
-      background: rgba(212, 175, 55, 0.15);
-      color: #D4AF37;
+      background: rgba(30, 91, 191, 0.1);
+      color: #1E5BBF;
       font-size: 0.55rem;
       font-weight: 700;
       padding: 0.2rem 0.6rem;
@@ -186,17 +161,16 @@
     .input-group input, 
     .input-group select, 
     .input-group textarea {
-      background: rgba(12, 16, 24, 0.9);
-      border: 1px solid rgba(70, 85, 105, 0.6);
-      border-radius: 1.25rem;
+      background: #F8FAFE;
+      border: 1px solid #D1DAE8;
+      border-radius: 1rem;
       padding: 0.85rem 1rem;
       font-size: 0.9rem;
-      font-family: 'Inter', monospace;
+      font-family: 'Inter', sans-serif;
       transition: all 0.25s;
-      color: #F0F3FA;
+      color: #0A1E3A;
       font-weight: 500;
       outline: none;
-      backdrop-filter: blur(4px);
     }
 
     .input-group textarea {
@@ -207,16 +181,16 @@
     .input-group input:focus, 
     .input-group select:focus, 
     .input-group textarea:focus {
-      border-color: #D4AF37;
-      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-      background: #0B111A;
+      border-color: #1E5BBF;
+      box-shadow: 0 0 0 3px rgba(30, 91, 191, 0.15);
+      background: #FFFFFF;
     }
 
     .input-group input.error-input, 
     .input-group select.error-input, 
     .input-group textarea.error-input {
-      border-color: #E64A4A;
-      background-color: rgba(230, 74, 74, 0.08);
+      border-color: #DC2626;
+      background-color: rgba(220, 38, 38, 0.05);
       animation: shake 0.35s ease;
     }
 
@@ -228,7 +202,7 @@
 
     .hint-text {
       font-size: 0.6rem;
-      color: #8F9BB2;
+      color: #6B7A90;
       margin-top: 6px;
       display: flex;
       align-items: center;
@@ -236,30 +210,29 @@
     }
 
     .info-note {
-      background: rgba(212, 175, 55, 0.08);
+      background: rgba(30, 91, 191, 0.05);
       border-radius: 1rem;
       padding: 0.8rem 1rem;
       margin-bottom: 1.6rem;
       font-size: 0.7rem;
-      color: #E9D49C;
+      color: #1E3A6E;
       display: flex;
       align-items: center;
       gap: 10px;
-      border-left: 3px solid #D4AF37;
+      border-left: 3px solid #1E5BBF;
       font-weight: 500;
-      backdrop-filter: blur(5px);
     }
 
-    /* Botón primario dorado */
+    /* Botón primario azul */
     .submit-btn {
       width: 100%;
-      background: linear-gradient(98deg, #B8860B, #D4AF37, #E4C468);
+      background: linear-gradient(98deg, #0B2B4A, #1A4A7A, #1E5BBF);
       border: none;
       padding: 1rem 1.2rem;
       font-size: 1rem;
       font-weight: 800;
       font-family: 'Inter', sans-serif;
-      color: #0B0E14;
+      color: #FFFFFF;
       border-radius: 2rem;
       cursor: pointer;
       margin-top: 0.8rem;
@@ -268,14 +241,14 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.2);
       letter-spacing: 0.5px;
     }
 
     .submit-btn:hover {
       transform: translateY(-2px);
-      background: linear-gradient(98deg, #C9A03D, #E9C468, #F5D97A);
-      box-shadow: 0 18px 28px -10px rgba(212, 175, 55, 0.4);
+      background: linear-gradient(98deg, #0F3A60, #1E5BBF, #2E6FCF);
+      box-shadow: 0 18px 28px -10px rgba(30, 91, 191, 0.4);
     }
 
     .submit-btn:disabled {
@@ -284,15 +257,15 @@
       cursor: not-allowed;
     }
 
-    /* Toast con estilo dorado */
+    /* Toast */
     .notification-toast {
       position: fixed;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: rgba(10, 14, 22, 0.96);
+      background: #0A1E3A;
       backdrop-filter: blur(16px);
-      color: #F8F3E2;
+      color: #FFFFFF;
       padding: 1rem 2rem;
       border-radius: 60px;
       display: flex;
@@ -300,12 +273,12 @@
       gap: 12px;
       font-weight: 600;
       font-size: 0.85rem;
-      box-shadow: 0 20px 35px -5px black;
+      box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.2);
       z-index: 2000;
       transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       opacity: 0;
       visibility: hidden;
-      border: 1px solid rgba(212, 175, 55, 0.5);
+      border: 1px solid rgba(30, 91, 191, 0.5);
       letter-spacing: 0.2px;
     }
     .notification-toast.show {
@@ -314,17 +287,12 @@
       visibility: visible;
     }
     .notification-toast.success-toast {
-      background: linear-gradient(115deg, #1D5B3E, #0E3824);
-      border-color: #D4AF37;
+      background: linear-gradient(115deg, #0A3A2A, #0B4A35);
+      border-color: #2E8B57;
     }
     .notification-toast.error-toast {
-      background: linear-gradient(115deg, #881a1f, #5c1014);
-      border-color: #E68A2E;
-    }
-
-    /* Footer completamente eliminado - sin badges de acceso garantizado, etc */
-    .footer-note {
-      display: none;
+      background: linear-gradient(115deg, #7A1A1A, #5C1010);
+      border-color: #DC2626;
     }
 
     @media (max-width: 580px) {
@@ -350,7 +318,7 @@
     <div class="badge-premium">
       <i class="fas fa-crown"></i> <span>Webinar ANGEL SAHAGUN</span>
     </div>
-<h1>Registro</h1>
+    <h1>Registro</h1>
     <div class="sub">Acceso directo por Microsoft Teams · Cupos limitados</div>
   </div>
 
@@ -368,13 +336,13 @@
       </div>
 
       <div class="input-group">
-        <label><i class="fas fa-envelope-gold"></i> Correo electrónico <span class="required-star">*</span></label>
+        <label><i class="fas fa-envelope"></i> Correo electrónico <span class="required-star">*</span></label>
         <input type="email" id="email" placeholder="Campo obligatorio" required autocomplete="email">
         <div class="hint-text"><i class="fas fa-key"></i> Te enviaremos el acceso VIP y materiales</div>
       </div>
 
       <div class="input-group">
-        <label><i class="fas fa-phone-ring"></i> Teléfono directo <span class="optional-badge">Opcional</span></label>
+        <label><i class="fas fa-phone-alt"></i> Teléfono directo <span class="optional-badge">Opcional</span></label>
         <input type="tel" id="telefono" placeholder="Campo opcional" inputmode="numeric">
         <div class="hint-text"><i class="fas fa-shield-alt"></i> Solo dígitos, 10 caracteres</div>
       </div>
@@ -410,15 +378,15 @@
         <label><i class="fas fa-brain"></i> Nivel de expertise <span class="required-star">*</span></label>
         <select id="conocimiento" required>
           <option value="" disabled selected>Selecciona tu nivel</option>
-          <option value="Alto">Alto </option>
-          <option value="Medio">Medio </option>
-          <option value="Bajo">Bajo </option>
+          <option value="Alto">Alto</option>
+          <option value="Medio">Medio</option>
+          <option value="Bajo">Bajo</option>
         </select>
       </div>
 
       <div class="input-group">
-        <label><i class="fas fa-message-quote"></i> ¿Qué esperas del webinar?</label>
-        <textarea id="puntosEspeciales" placeholder="Campo obligatorio"></textarea>
+        <label><i class="fas fa-message-quote"></i> ¿Qué esperas del webinar? <span class="optional-badge">Opcional</span></label>
+        <textarea id="puntosEspeciales" placeholder="Cuéntanos tus expectativas"></textarea>
       </div>
 
       <button type="submit" class="submit-btn" id="submitBtn">
@@ -426,15 +394,14 @@
       </button>
     </form>
   </div>
-  <!-- Footer eliminado: sin textos "Acceso garantizado", "Certificado digital", "Soporte premium" -->
 </div>
 
 <script>
   // ========= CONFIGURACIÓN EMAILJS =========
   const EMAILJS_PUBLIC_KEY = "3Zj6GReXfk32xlnSC";
   const EMAILJS_SERVICE_ID = "service_l3ro6dh";
-  const EMAILJS_TEMPLATE_ADMIN = "template_rs9p4as";     // Notificación para el organizador
-  const EMAILJS_TEMPLATE_CLIENTE = "template_fdndpp8";   // Envío de accesos al alumno
+  const EMAILJS_TEMPLATE_ADMIN = "template_rs9p4as";
+  const EMAILJS_TEMPLATE_CLIENTE = "template_fdndpp8";
   
   emailjs.init(EMAILJS_PUBLIC_KEY);
   
@@ -464,7 +431,7 @@
     if (toastTimeout) clearTimeout(toastTimeout);
     toastDiv.classList.remove('show', 'success-toast', 'error-toast');
     void toastDiv.offsetWidth;
-    let iconHtml = type === 'success' ? '<i class="fas fa-check-double"></i>' : '<i class="fas fa-skull-crosswalk"></i>';
+    let iconHtml = type === 'success' ? '<i class="fas fa-check-double"></i>' : '<i class="fas fa-exclamation-triangle"></i>';
     toastDiv.innerHTML = `${iconHtml} <span>${message}</span>`;
     if (type === 'success') toastDiv.classList.add('success-toast');
     else if (type === 'error') toastDiv.classList.add('error-toast');
@@ -487,10 +454,10 @@
     return /^\d{10}$/.test(phone);
   }
   
-  // Envío al ADMIN (notificación de nuevo registro)
+  // Envío al ADMIN
   async function sendAdminNotification(formData) {
     const adminParams = {
-      to_email: "tucorreo@tudominio.com",    // ¡IMPORTANTE! CAMBIAR POR CORREO REAL DEL ADMIN
+      to_email: "tucorreo@tudominio.com",
       nombre: formData.nombre,
       apellidos: formData.apellidos,
       email: formData.email,
@@ -506,7 +473,7 @@
     return await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, adminParams);
   }
   
-  // Envío al CLIENTE: ACCESO AL CURSO / WEBINAR (datos dinámicos + link)
+  // Envío al CLIENTE
   async function sendClientAccessEmail(formData) {
     const clientParams = {
       email: formData.email,
@@ -514,7 +481,6 @@
       apellidos_alumno: formData.apellidos,
       email_alumno: formData.email,
       telefono_alumno: formData.telefono || 'No proporcionado',
-      // Personaliza los datos del curso aquí (branding premium)
       nombre_curso: "Webinar Elite: Liderazgo y Estrategia 2026",
       link_acceso: "https://vip.angelsahagun.com/acceso-webinar",
       usuario_acceso: formData.email,
@@ -566,9 +532,7 @@
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Procesando reserva...';
     
     try {
-      // 1. Enviar el correo de ACCESOS al cliente (prioridad)
       await sendClientAccessEmail(formData);
-      // 2. Notificación al administrador
       await sendAdminNotification(formData);
       showToast("✅ ¡Registro confirmado! Revisa tu bandeja de entrada (y spam) con los accesos al webinar.", "success");
       form.reset();
@@ -587,7 +551,7 @@
     }
   });
   
-  // Validaciones en tiempo real + UX
+  // Validaciones en tiempo real
   telefonoInput.addEventListener('input', (e) => {
     let v = e.target.value.replace(/\D/g, '');
     if (v.length > 10) v = v.slice(0,10);
@@ -615,7 +579,8 @@
   });
 </script>
 
-<div style="position: fixed; bottom: 12px; left: 12px; z-index: 2147483640; font-family: 'Inter', sans-serif; font-size: 9px; background: rgba(0,0,0,0.4); backdrop-filter: blur(6px); padding: 4px 12px; border-radius: 40px; color: #C0B07A; pointer-events: none; letter-spacing: 0.4px;">
-  <i class=""></i> Hecho por Angel Sahagún 
+<div style="position: fixed; bottom: 12px; left: 12px; z-index: 2147483640; font-family: 'Inter', sans-serif; font-size: 9px; background: rgba(0,0,0,0.05); backdrop-filter: blur(6px); padding: 4px 12px; border-radius: 40px; color: #1E5BBF; pointer-events: none; letter-spacing: 0.4px;">
+  <i class="fas fa-code"></i> Hecho por Angel Sahagún
+</div>
 </body>
 </html>
