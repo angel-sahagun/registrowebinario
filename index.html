@@ -69,6 +69,39 @@
       pointer-events: none;
     }
 
+    /* Contenedor flexible para el logo y el badge */
+    .hero-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1.3rem;
+      flex-wrap: wrap;
+    }
+    
+    /* Logo sobre fondo azul marino */
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      padding: 4px;
+      transition: transform 0.2s ease;
+    }
+    .hero-logo:hover {
+      transform: scale(1.05);
+    }
+    .hero-logo img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 1px solid rgba(46, 139, 255, 0.5);
+    }
+    
     .badge-premium {
       display: inline-flex;
       align-items: center;
@@ -81,7 +114,6 @@
       font-weight: 700;
       letter-spacing: 0.5px;
       color: #2E8BFF;
-      margin-bottom: 1.3rem;
       border: 1px solid rgba(46, 139, 255, 0.3);
       text-transform: uppercase;
     }
@@ -309,14 +341,27 @@
       .hero-section {
         padding: 1.8rem;
       }
+      .hero-logo img {
+        width: 36px;
+        height: 36px;
+      }
+      .hero-header {
+        gap: 8px;
+      }
     }
   </style>
 </head>
 <body>
 <div class="register-container">
   <div class="hero-section">
-    <div class="badge-premium">
-      <i class=""></i> <span>Webinar <br> "Puntos CLAVE dentro del proceso de Solucion de Problemas"</span>
+    <!-- Logo y texto alineados, el logo está fuera del badge y sobre fondo azul marino -->
+    <div class="hero-header">
+      <a href="https://angel-sahagun.github.io/registrowebinario/" target="_blank" class="hero-logo">
+        <img src="https://vvrl.cc/api/image/i94p8f/view" alt="Logo Angel Sahagun">
+      </a>
+      <div class="badge-premium">
+        <span>Webinar <br> "Puntos CLAVE dentro del proceso de Solucion de Problemas"</span>
+      </div>
     </div>
     <h1>Hoja de Registro</h1>
     <div class="sub">Al enviar esta hoja de registro recibirás por correo 2 accesos, uno para el WEBINAR y otro para la sesión de Q&A’s. <strong>Agradecemos tu interés por este WEBIINAR!</strong>
@@ -389,6 +434,9 @@
           <option value="Bajo">Bajo</option>
         </select>
       </div>
+
+      <!-- Campo oculto puntosEspeciales -->
+      <textarea id="puntosEspeciales" style="display:none;"></textarea>
 
       <button type="submit" class="submit-btn" id="submitBtn">
         <i class="fas fa-gem"></i> Reservar mi Lugar
